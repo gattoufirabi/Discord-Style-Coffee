@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function BarSecond() {
     return (
-        <div className='fixed bg-[#b3a7a8] top-0 left-20 h-screen m-0 flex flex-col w-60 z-0'>
-            <PageName title="# Home" />
+        <div className='fixed bg-[#b3a7a8] top-0 left-[5%] h-screen m-0 flex flex-col w-[15%] z-10'>
+            <PageName title="Home" />
             <ListPage pname="# What is Coffee Geek" />
             <ListPage pname="# About us" />
             <ListPage pname="# Because your opinion matters" />

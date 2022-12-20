@@ -8,8 +8,8 @@ import {
 } from 'react-router-dom';
 import SideBar from './components/SideBar';
 import BarSecond from './components/BarSecond';
-import SecondView from './SecondView'
-import MainView from './MainView'
+import SecondView from './pages/SecondView'
+import MainView from './pages/MainView'
 
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
       <BarSecond />
       <Routes>
         <Route exact path="/MainView" element={<MainView />} />
-        <Route exact path="/landing" element={<SecondView />} />
+        <Route exact path="/SecondView" element={<SecondView />} />
       </Routes>
     </BrowserRouter>
 
