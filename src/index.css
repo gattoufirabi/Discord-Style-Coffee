@@ -22,4 +22,16 @@ p:hover {
   .sidebar-tooltip {
     @apply absolute w-auto p-2 m-2 min-w-max left-14 rounded-md shadow-md text-white bg-gray-900 text-xs font-bold transition-all duration-100 scale-0 origin-left;
   }
+
+  .page-name {
+    @apply relative px-8 py-4 w-56 text-center text-[#3f3a3a] font-bold text-lg shadow-md;
+  }
+
+  .listed-items {
+    @apply relative px-3 py-4 w-48 m-2 text-left text-[#3f3a3a] text-sm cursor-pointer;
+  }
+
+  .listed-items:hover {
+    @apply bg-[#9b9191] transition-transform ease-in;
+  }
 }
