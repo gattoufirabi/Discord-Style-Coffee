@@ -1,14 +1,29 @@
 import './App.css';
-import SideBar from './SideBar';
-import styled from 'styled-components'
-import BarSecond from './BarSecond';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Routes,
+  BrowserRouter
+} from 'react-router-dom';
+import SideBar from './components/SideBar';
+import BarSecond from './components/BarSecond';
+import SecondView from './SecondView'
+import MainView from './MainView'
+
+
 function App() {
   return (
-    <Container>
+    <BrowserRouter>
       <SideBar />
       <BarSecond />
-    </Container>
+      <Routes>
+        <Route exact path="/MainView" element={<MainView />} />
+        <Route exact path="/landing" element={<SecondView />} />
+      </Routes>
+    </BrowserRouter>
+
+
   );
 }
-const Container = styled.div``;
 export default App;

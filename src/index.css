@@ -28,7 +28,7 @@ p:hover {
   }
 
   .listed-items {
-    @apply relative px-3 py-4 w-48 m-2 text-left text-[#3f3a3a] text-sm cursor-pointer;
+    @apply relative px-3 py-4 w-56 m-2 text-left text-[#3f3a3a] text-sm cursor-pointer;
   }
 
   .listed-items:hover {
