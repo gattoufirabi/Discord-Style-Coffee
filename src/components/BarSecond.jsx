@@ -1,9 +1,10 @@
 import React from 'react'
 
-export default function BarSecond() {
+export default function BarSecond({ location }) {
+
     return (
         <div className='fixed bg-[#b3a7a8] top-0 left-[5%] h-screen m-0 flex flex-col w-[15%] z-10'>
-            <PageName title="Home" />
+            <PageName title={location} />
             <ListPage pname="# What is Coffee Geek" />
             <ListPage pname="# About us" />
             <ListPage pname="# Because your opinion matters" />
