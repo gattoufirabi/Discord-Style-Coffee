@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function BarSecond({ props }) {
 
@@ -8,11 +9,8 @@ export default function BarSecond({ props }) {
             <PageName title={props.title} />
 
             {props.content.map((item) =>
-                <ListPage key={item.id} pname={item.pname} />)}
-
-
+                <Link to={item.link} exact> <ListPage key={item.id} pname={item.pname} /></Link>)}
         </div>
-
     )
 }
 const PageName = ({ title }) => (
