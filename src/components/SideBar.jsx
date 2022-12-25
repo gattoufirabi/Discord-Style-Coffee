@@ -6,34 +6,43 @@ import { GiThreeFriends } from 'react-icons/gi'
 import { useState, useEffect } from 'react';
 import BarSecond from './BarSecond'
 const SideBar = () => {
-    const [location, setLocation] = useState()
+    const home = [{ id: 1, pname: "Welcome to Coffee Geek" },
+    { id: 2, pname: "What is CoffeeGeek?" },
+    { id: 3, pname: "How to use?" },
+    { id: 4, pname: "About us" }]
+
+    const browse = [{ id: 1, pname: "Search" },
+    { id: 2, pname: "blabla" }]
+
+    const pages = [
+        { id: "Home", title: "Home", icon: <SiBuymeacoffee size='32' />, content: home },
+        { id: "Browse", title: "Browse locations", icon: <FaLocationArrow size='32' />, content: browse },
+        { id: "Add", title: "Add location", icon: <ImLocation2 size='32' />, content: home },
+        { id: "Review", title: "Review a shop", icon: <MdRateReview size='32' />, content: browse },
+        { id: "Member", title: "Member's club", icon: <GiThreeFriends size='32' />, content: home }
+    ]
+    const [location, setLocation] = useState("Home")
+
+    const [contents, setContents] = useState(pages[0])
 
     useEffect(() => (
-
-        console.log(location)
+        console.log("changed")
     ), [location])
 
 
     return (
 
-        <div className='fixed bg-[#6e6061] top-0 left-0 h-screen w-[5%] m-0 flex flex-col z-20 '>
-            <button type="button" onClick={() => (setLocation("home"))} >
-                <SideBarIcon icon={<SiBuymeacoffee size='32' />} text="Home" />
-            </button>
-            <button type="button" onClick={() => (setLocation("browse"))} >
-                <SideBarIcon icon={<FaLocationArrow size='32' />} text="Browse locations" />
-            </button>
-            <button type='button' onClick={() => (setLocation("locate"))}  >
-                <SideBarIcon icon={<ImLocation2 size='32' />} text="Add Location" />
-            </button>
-            <button type='button' onClick={() => (setLocation("review"))}>
-                <SideBarIcon icon={<MdRateReview size='32' />} text="Review a shop" />
-            </button>
-            <button type='button' onClick={() => (setLocation("member"))}>
-                <SideBarIcon icon={<GiThreeFriends size='32' />} text="Members" />
-            </button>
+        <div className='fixed bg-[#6e6061] top-0 left-0 h-screen w-[5%] m-0 flex flex-col z-[1] '>
+            {pages.map((page) =>
+                <button type='button' key={page.id} onClick={() => {
+                    setLocation(page.title); setContents(page);
+                }}>
+                    <SideBarIcon icon={page.icon} text={page.title} />
 
-            <BarSecond location={location} />
+                </button>)}
+            <BarSecond props={contents} />
+
+
         </div>
 
     )
@@ -41,7 +50,7 @@ const SideBar = () => {
 const SideBarIcon = ({ icon, text }) => (
     <div className='sidebar-icon group'>
         {icon}
-        <span className='sidebar-tooltip group-hover:scale-100'>
+        <span className='sidebar-tooltip group-hover:scale-100 z-[10]'>
             {text}
         </span>
     </div>

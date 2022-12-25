@@ -1,13 +1,16 @@
 import React from 'react'
 
-export default function BarSecond({ location }) {
+export default function BarSecond({ props }) {
 
     return (
-        <div className='fixed bg-[#b3a7a8] top-0 left-[5%] h-screen m-0 flex flex-col w-[15%] z-10'>
-            <PageName title={location} />
-            <ListPage pname="# What is Coffee Geek" />
-            <ListPage pname="# About us" />
-            <ListPage pname="# Because your opinion matters" />
+
+        <div className='fixed bg-[#b3a7a8] top-0 left-[5%] h-screen m-0 flex flex-col w-[15%] z-[0]'>
+            <PageName title={props.title} />
+
+            {props.content.map((item) =>
+                <ListPage key={item.id} pname={item.pname} />)}
+
+
         </div>
 
     )
